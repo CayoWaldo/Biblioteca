@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Regristro de libros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="data:image/png;base64,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" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    Egg
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav col-6 ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Libros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Autores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Editoriales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid m5 contenedor">
+            <form class="formulario" action="/libro/registro" method="POST">
+
+                <div class="form-group my-3">
+                    <label class="mb-2">Cargar libro</label>
+                    <input type="number" class="form-control" name="isbn" placeholder="isbn">
+                </div>
+                <div class="form-group my-3">
+                    <input  type="text" name="titulo" placeholder="Titulo del libro">
+                </div>
+                <div class="form-group my-3">
+                    <input type="text" name="ejemplares" placeholder="Cantidad de ejemplares">
+                </div>
+                
+                <div th:if="${error != null}" class="card text-withe bg-danger mb-3 mensajeError">
+                    <div class="card-body">
+                        <h5 class="card-titile">Error</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <div th:if="${exito != null}" class="card text-withe bg-success mb-3 mt-3 mensajeExito">
+                    <div class="card-body">
+                        <h5 class="card-titile">Exito!</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
+                
+                
+                <div class="form-group my-3">
+                    <select name="idAutor" class="form-select">
+                        <option>Seleccionar autor</option>
+                        <option th:each="Autor:${autores}" 
+                                th:value="${Autor.id}"
+                                th:text="${Autor.nombre}"/>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <select name="idEditorial"class="form-select">
+                        <option selected>Seleccionar editorial</option>
+                        <option th:each="editorial: ${editoriales}" 
+                                th:value="${editorial.id}"
+                                th:text="${editorial.nombre}"/>
+                    </select>
+                </div>
+                <div>
+                    <div class="d-grid gap-2 col-7 mx-auto">
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                        <button class="btn btn-primary" type="button">Volver</button>
+                    </div>
+                </div> 
+            </form>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </body>
+</html>

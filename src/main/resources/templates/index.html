@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8" >
+    <title>Biblioteca Egg</title>
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navBar">
+            <div class="containerImg">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                  <img class="logo" src="data:image/png;base64,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" alt="Img logo egg">
+                </a>
+              </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
+              <ul class="navbar-nav ms-auto elementos">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Libros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                        <li><a class="dropdown-item" th:href="@{/libro/registrar}">Crear Libro</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><a class="dropdown-item" th:href="@{/libro/lista}">Listar Libros</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Autores
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                        <li><a class="dropdown-item" th:href="@{/autor/registrar}">Crear Autor</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                       
+                        <li><a class="dropdown-item" th:href="@{/autor/lista}">Listar Autores</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Editoriales
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                        <li><a class="dropdown-item" th:href="@{/editorial/registrar}">Crear Editorial</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><a class="dropdown-item" th:href="@{/editorial/lista}">Listar Editoriales</a></li>
+                    </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+        <div th:if="${exito}!=null" class="card text-black bg-success mb-3 mt-3 mensajeExito" >
+            <div class="card-body">
+                <h5 class="card-title">Exito</h5>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <div th:if="${error}!=null" class="card text-black bg-danger mb-3 mensajeError" >
+            <div class="card-body">
+                <h5 class="card-title">Error ð</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+        <header class="header">
+            <section class="contenedorMain">
+                <div class="tituloBiblioteca">
+                    <a class="navbar-brand" href="#">BIBLIOTECA EGG</a>
+                </div>
+                <div class="container contenedorLibros">
+                    <p class="tituloLibros">Encontrá todos los Libros Aquí!</p>
+
+                </div>
+                <div class="bg-circle-1 bg-circle"></div>
+                <div class="bg-circle-2 bg-circle"></div>
+                <div class="bg-circle-3 bg-circle"></div>
+                <div class="bg-circle-4 bg-circle"></div>
+            </section>
+        </header>
+
+        <footer class="text-muted py-5">
+            <div class="containerFooter">
+                <p class="mb-1">Album example is &copy; Bootstrap,<br>but please download and customize it for yourself!</p>
+                <p class="mb-0">New to Bootstrap? <a href="/"><br>Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+                <p class="float-end mb-1">
+                    <a href="#" style="text-decoration:none"><span>⬆️</span> Back to top</a>
+                </p>
+            </div>
+        </footer>
+
+
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
